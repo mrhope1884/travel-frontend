@@ -41,7 +41,7 @@ function App() {
   const fetchTours = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:3000/api/tours?page=${page}&limit=9`;
+      let url = `https://travel-4trh.onrender.com/api/tours?page=${page}&limit=9`;
       if (searchQuery) url += `&query=${encodeURIComponent(searchQuery)}`;
       if (priceFilter === 'under-3m') url += `&maxPrice=3000000`;
       if (priceFilter === '3m-4m') url += `&minPrice=3000000&maxPrice=4000000`;
@@ -82,7 +82,7 @@ function App() {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:3000/api/tours/delete/${id}`, {
+      await axios.delete(`https://travel-4trh.onrender.com/api/tours/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("🗑️ Đã chuyển tour vào Thùng Rác!");
