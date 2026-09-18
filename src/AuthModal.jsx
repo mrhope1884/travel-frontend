@@ -20,7 +20,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
     try {
       if (isLoginTab) {
         // Gửi yêu cầu Đăng Nhập
-        const res = await axios.post('http://localhost:3000/api/auth/login', { 
+        const res = await axios.post('https://travel-4trh.onrender.com/api/auth/login', { 
           email: email.trim(), 
           password 
         });
@@ -37,7 +37,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
         onClose();
       } else {
         // Gửi yêu cầu Đăng Ký
-        await axios.post('http://localhost:3000/api/auth/register', { 
+        await axios.post('https://travel-4trh.onrender.com/api/auth/register', { 
           name: name.trim(), 
           email: email.trim(), 
           password 

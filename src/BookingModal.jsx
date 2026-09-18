@@ -37,7 +37,7 @@ function BookingModal({ isOpen, onClose, tour }) {
     try {
       setLoading(true);
       const res = await axios.post(
-        'http://localhost:3000/api/bookings/create',
+        'https://travel-4trh.onrender.com/api/bookings/create',
         {
           tourId: tour._id,
           numBookedSeats: Number(numSeats)

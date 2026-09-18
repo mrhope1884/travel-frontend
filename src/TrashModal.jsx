@@ -10,7 +10,7 @@ function TrashModal({ isOpen, onClose, onRestoreSuccess }) {
     if (!token) return;
 
     setLoading(true);
-    axios.get('http://localhost:3000/api/tours/trash', {
+    axios.get('https://travel-4trh.onrender.com/api/tours/trash', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
@@ -33,7 +33,7 @@ function TrashModal({ isOpen, onClose, onRestoreSuccess }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.patch(`http://localhost:3000/api/tours/restore/${id}`, {}, {
+      const res = await axios.patch(`https://travel-4trh.onrender.com/api/tours/restore/${id}`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert(res.data?.message || "🎉 Khôi phục tour thành công!");
@@ -51,7 +51,7 @@ function TrashModal({ isOpen, onClose, onRestoreSuccess }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.delete(`http://localhost:3000/api/tours/destroy/${id}`, {
+      const res = await axios.delete(`https://travel-4trh.onrender.com/api/tours/destroy/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert(res.data?.message || "💥 Đã xóa vĩnh viễn!");

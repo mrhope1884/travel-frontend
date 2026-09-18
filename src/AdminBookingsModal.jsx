@@ -14,7 +14,7 @@ function AdminBookingsModal({ isOpen, onClose }) {
     if (!token) return;
 
     setLoading(true);
-    axios.get('http://localhost:3000/api/bookings/all', {
+    axios.get('https://travel-4trh.onrender.com/api/bookings/all', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => {
@@ -39,7 +39,7 @@ function AdminBookingsModal({ isOpen, onClose }) {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.patch(`http://localhost:3000/api/bookings/cancel/${bookingId}`, {}, {
+      const res = await axios.patch(`https://travel-4trh.onrender.com/api/bookings/cancel/${bookingId}`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert(res.data?.message || "🎉 Đã hủy đơn thành công!");

@@ -20,7 +20,7 @@ export default function AddTourModal({ isOpen, onClose, onTourAdded }) {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:3000/api/tours/create',
+        'https://travel-4trh.onrender.com/api/tours/create',
         {
           title: title.trim(),
           price: Number(price),
